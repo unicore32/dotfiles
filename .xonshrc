@@ -1,0 +1,24 @@
+# 参考
+# https://vaaaaaanquish.hatenablog.com/entry/2017/12/09/154201
+
+# vi風の操作
+$VI_MODE = True
+# Ctrl + D で終了しない
+$IGNOREEOF = True
+# tabではなく空白4つ
+$INDENT = "  "
+# 補完時に大小区別しない
+$CASE_SENSITIVE_COMPLETIONS = False
+# 補完選択Enterで即実行しない
+$COMPLETIONS_CONFIRM = True
+# 括弧を補完
+$XONSH_AUTOPAIR = True
+# ディレクトリ名を入力すればcdできる
+$AUTO_CD = True
+# プロンプトの設定タイムアウトのメッセージ抑制
+$SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
+# カラーテーマ
+$XONSH_COLOR_STYLE='native'
+
+# fzf-widgets
+xontrib load fzf-widgets
