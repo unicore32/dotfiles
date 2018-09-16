@@ -14,19 +14,8 @@ fi
 # 環境変数
 export XDG_CONFIG_HOME=~/.config
 
-# anyenv無かったら落としてくる
-if [ ! -d $HOME/.anyenv ]; then
-  git clone https://github.com/riywo/anyenv "${HOME}/.anyenv"
-fi
-
-# ついでにanyenv-update
-if [ ! -d $HOME/.anyenv/plugins/anyenv-update ]; then
-  git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-fi
-
-# anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+# anyenvをloadする
+[[ -f $HOME/.zshrc.anyenv ]] && source $HOME/.zshrc.anyenv
 
 # xonsh
 alias x='xonsh'

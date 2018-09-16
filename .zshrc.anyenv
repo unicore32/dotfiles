@@ -1,0 +1,32 @@
+# anyenv無かったら落としてくる
+if [ ! -d $HOME/.anyenv ]; then
+  git clone https://github.com/riywo/anyenv "${HOME}/.anyenv"
+fi
+
+# anyenvをロード
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+# ついでにanyenv-update
+if [ ! -d $HOME/.anyenv/plugins/anyenv-update ]; then
+  git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+fi
+
+# ndenv
+if [ ! -d $HOME/.anyenv/envs/ndenv ]; then
+  anyenv install ndenv
+fi
+
+# pyenv
+if [ ! -d $HOME/.anyenv/envs/pyenv ]; then
+  anyenv install pyenv
+fi
+
+# xonsh絡みをよしなしにする
+if [ ! -d $HOME/.anyenv/envs/pyenv/versions/3.6.6 ]; then
+  pyenv install 3.6.6
+  pyenv global 3.6.6
+  pip install xonsh prompt_toolkit xontrib-fzf-widgets
+fi
+
+
