@@ -16,11 +16,14 @@ $XONSH_AUTOPAIR = True
 # ディレクトリ名を入力すればcdできる
 $AUTO_CD = True
 # PROMPT
-$PROMPT=' {cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
+$PROMPT=" {cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} "
 # プロンプトの設定タイムアウトのメッセージ抑制
 $SUPPRESS_BRANCH_TIMEOUT_MESSAGE = True
 # カラーテーマ
-$XONSH_COLOR_STYLE='native'
+$XONSH_COLOR_STYLE="native"
+
+# alias emacs
+aliases["emacs"] = "emacs -nw"
 
 # fzf-widgets
 xontrib load fzf-widgets
